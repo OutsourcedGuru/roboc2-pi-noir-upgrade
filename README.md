@@ -103,6 +103,7 @@ Remove any hooks from the suction cup and insert it into the slot in the rear.
 The backup of the microSD should be finished at some point. Remember to eject the microSD properly before removing it from your workstation.
 
 ![backup-3](https://user-images.githubusercontent.com/15971213/27871429-7bf71636-615a-11e7-9a0c-bf4d1d8efda9.png)
+
 Exit completely from the ApplePi-Baker software.
 
 ### Begin restoring to the new microSD card
