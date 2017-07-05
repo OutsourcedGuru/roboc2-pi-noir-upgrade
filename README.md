@@ -150,6 +150,8 @@ Reinstall the front cover beginning with the bottom and working up the sides and
 ### Power on Robo C2
 Turn on the power switch for the printer and wait for it to boot. Ignore any upgrade prompts by choosing Cancel.
 
+Under Motor Controls, choose the Home feature to return all steppers to their home position.
+
 ### Make some adjustments remotely and test the camera
 Using ssh (OS X) or putty (Windows) from your workstation, connect to your printer using its name (serial number from the label on the back).
 
