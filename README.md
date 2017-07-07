@@ -216,3 +216,18 @@ Lower on the home page, adjust any settings under Time Lapse.
 After the print job has completed, review the time-lapse video which has been created. An example video is here in this repository if you'd like to see how my botched print job finished badly one third of the way through--I quickly aborted the job, btw.
 
 You may want to adjust the location of the suction cup a little higher/lower depending upon your first results as well as slightly rotating it (if your Pi NoIR's camera wasn't perfectly aligned during its manufacture).
+
+### Remove the OctoPrint watermark in your videos
+There's also a bit of a hack so that you can remove the OctoPrint watermark there in the bottom/left of the videos it produces.
+
+```
+$ ssh pi@charming-pascal.local
+$ cd ~/.octoprint
+$ sudo nano config.yaml
+  # locate the webcam: section near the bottom of the file and between ffmpeg: and snapshot: lines insert the line...
+  watermark: false
+  # save the file with Ctrl+O, Enter then Ctrl+X
+$ exit
+```
+
+Next, you'll want to go into OctoPrint from your workstation and restart the service from the System menu.
