@@ -231,3 +231,33 @@ $ exit
 ```
 
 Next, you'll want to go into OctoPrint from your workstation and restart the service from the System menu.
+
+### Adjust the rotation in OctoPrint
+Unfortunately, it looks like the camera included in the Robo R2 has a default tilt of 10° for whatever reason. The streaming side of the webcam doesn't adjst this, so time-lapse videos turn out fine. It is annoying, though, to see this unwanted rotation in the interface. Here's how to remove that, noting that you may have to repeat this with every upgrade from Robo.
+
+Substitute your own printer's name below.
+
+```
+$ ssh pi@charming-pascal.local
+$ sudo nano ~/oprint/lib/python2.7/site-packages/octoprint_robotheme/static/css/main.css
+  # ---------------------------
+  # Use the Ctl-W command to search for "rotate"
+  # (pressing Enter)...
+  # then comment out the three offending lines
+  # using the style of commenting that I'm using here
+  # ---------------------------
+    #webcam_image {
+      position: relative;
+      top: -54px;
+      left: -47px;
+      /*-ms-transform: rotate(-10deg);*/
+      /*-webkit-transform: rotate(-10deg);*/
+      /*transform: rotate(-10deg);*/
+    } 
+  # ---------------------------
+  # save the file with Ctrl+O, Enter then Ctrl+X
+  # ---------------------------
+$ exit
+```
+
+It may be necessary to restart the OctoPrint interface for this change to be seen.
